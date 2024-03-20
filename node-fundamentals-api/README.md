@@ -26,3 +26,6 @@ UsersController =>
 comandos DML (Data Manipulation Language)
 
 bcryptjs
+
+Query Builder => Contrutor de Consulta, Permite a construções
+SQL independente do banco de dados utilizado.
