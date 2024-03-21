@@ -29,3 +29,7 @@ bcryptjs
 
 Query Builder => Contrutor de Consulta, Permite a construções
 SQL independente do banco de dados utilizado.
+
+Diferença entre usar o NPM e o NPX. Basicamente o NPM é utilizado para instalar pacotes, enquanto o NPX é utilizado para executar pacotes.
+
+Primary key e Foreign key
