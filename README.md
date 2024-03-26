@@ -1,60 +1,68 @@
-# Movie Listing API with Custom Tags
+## NodeJS API Study Repository
 
-## Descrição
+**Description:**
 
-**Imagem de capa**
+This repository is dedicated to studying and applying APIs in NodeJS. Here, you will find various projects that explore different functionalities and technologies, such as:
 
-### Funcionalidades
+* **Movie Listing API with Custom Tags:** Allows you to manage your favorite movie list, including adding, editing, and searching by name or tag.
+* **Comment Management API:** Provides endpoints for creating, reading, updating, and deleting comments, with support for filtering and pagination.
+* **Simple CRUD API:** Demonstrates basic CRUD (Create, Read, Update, Delete) operations on a MySQL database.
 
-* Lista de funcionalidades
-* ...
+**Installation:**
 
-### Tecnologias
+Each project within the repository has specific installation instructions. Navigate to the desired API folder and follow the instructions in the README.md file.
+
+**Usage:**
+
+The documentation for each API is available in the README.md file inside the project folder. You will find information on how to use the API, including examples of requests and responses.
+
+**Technologies:**
+
+The APIs in this repository were developed using the following technologies:
 
 * Node.js
 * Express
-* MongoDB
-* ...
+* Nodemon
+* sqlite
+* sqlite3
+* Knex
+* bcryptjs
 
-### Benefícios
+**Contributing:**
 
-* Aumento de produtividade
-* Economia de tempo
-* Facilidade de uso
-* ...
+This repository is open to contributions! If you wish to collaborate, feel free to submit pull requests with bug fixes, new features, or documentation improvements.
 
-### Demonstração
+**License:**
 
-* Screenshots
-* Vídeo de demonstração
+All APIs in this repository are distributed under the MIT license.
 
-### Instalação
+**Example:**
 
-* Passo 1
-* Passo 2
-* ...
+**Movie Listing API with Custom Tags:**
 
-### Documentação
+* **Endpoint:** `/api/movies`
+* **Method:** GET
+* **Description:** Returns a list of movies, which can be filtered by name or tag.
+* **Request Example:**
 
-* Link para a documentação
+```
+GET /api/movies?nome=Blade%20Runner
+```
 
-### Chamada para ação
+* **Response Example:**
 
-* Experimente o projeto!
-* Fork o repositório e contribua!
-* Envie feedback e sugestões!
-* ...
+```json
+[
+  {
+    "nome": "Blade Runner",
+    "tags": ["science fiction", "drama", "time travel"]
+  },
+  ...
+]
+```
 
-### Contato
+**Other Projects:**
 
-* Nome do autor
-* Email
-* Link para o site
+Explore the other projects in this repository to learn more about APIs in NodeJS and different web technologies.
 
-## Licença
-
-* MIT License
-
-## Agradecimentos
-
-* Lista de agradecimentos
+**I hope this repository is useful for your studies and development of APIs in NodeJS!**
