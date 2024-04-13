@@ -31,11 +31,11 @@ class UsersController {
 
     async updata(req, res) {
         const { name, email, password, old_password } = req.body
-        const { id } = req.params
+        const user_id = req.user.id
 
         const database = await sqliteConnection()
         const user = await database.get(
-            'SELECT * FROM users WHERE id = (?)', [id]
+            'SELECT * FROM users WHERE id = (?)', [user_id]
         )
 
         if (!user) {
@@ -55,14 +55,14 @@ class UsersController {
         user.email = email ?? user.email;
 
         if ( password && !old_password ) {
-            throw new AppError('Você precisa informar a senha antiga para definir a nova senha')
+            throw new AppError('You need to enter the old password to set the new password')
         }
 
         if (password && old_password) {
             const checkOldPassword = await compare(old_password, user.password)
 
             if (!checkOldPassword) {
-                throw new AppError('A senha antiga não confere.')
+                throw new AppError('The old password does not match.')
             }
 
             user.password = await hash(password, 8)
@@ -77,7 +77,7 @@ class UsersController {
             updated_at = DATETIME('now')
             WHERE id = ?
         `,  
-            [user.name, user.email, user.password, id]
+            [user.name, user.email, user.password, user_id]
         )
 
         return res.status(200).json()
