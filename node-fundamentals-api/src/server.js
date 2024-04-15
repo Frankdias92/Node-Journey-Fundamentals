@@ -1,18 +1,25 @@
 require('express-async-errors')
 
 const migrationsRun = require('./database/sqlite/migrations')
+const uploadConfig = require('./configs/upload')
 
 const AppError = require('./utils/AppError')
 const express = require('express')
 const routes = require('./routes')
+
+const cors = require('cors')
 
 // access to database SQL
 migrationsRun()
 
 
 const app = express()
+
+app.use(cors())
 app.use(express.json())
 
+
+app.use('/files', express.static(uploadConfig.UPLOADS_FOLDER))
 
 // access to routes on file index.js
 app.use(routes)
